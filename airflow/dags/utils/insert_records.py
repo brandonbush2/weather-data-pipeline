@@ -1,15 +1,15 @@
 import psycopg2
 import os
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 from api_request import fetch_data
 
-load_dotenv() #calling .env variables
+# load_dotenv() #calling .env variables
 
 def connect_to_db():
     print("Connecting to the Postgresql database...")
     try:
         conn = psycopg2.connect(
-            host = "localhost",
+            host = "db",
             port = 5432,
             dbname = os.getenv("POSTGRES_DB"),
             user = os.getenv("POSTGRES_USER"),
