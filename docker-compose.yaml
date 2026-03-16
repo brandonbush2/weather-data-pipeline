@@ -19,8 +19,11 @@ services:
       - 8000:8080
     environment:
       AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${AIRFLOW_USER}:${AIRFLOW_PASSWORD}@db:5432/${AIRFLOW_DB}
+      AIRFLOW_UID: ${AIRFLOW_UID}
+
     volumes:
       - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/dags/utils:/opt/airflow/utils
     depends_on:
       - db
     networks:
