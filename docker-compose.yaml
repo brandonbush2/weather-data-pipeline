@@ -17,13 +17,15 @@ services:
     image: apache/airflow:3.1.6
     ports:
       - 8000:8080
+    env_file:
+      - .env
     environment:
       AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${AIRFLOW_USER}:${AIRFLOW_PASSWORD}@db:5432/${AIRFLOW_DB}
-      AIRFLOW_UID: ${AIRFLOW_UID}
-
+      API_KEY: ${API_KEY}
     volumes:
       - ./airflow/dags:/opt/airflow/dags
       - ./airflow/dags/utils:/opt/airflow/utils
+      # - ./.env:/opt/airflow/.env
     depends_on:
       - db
     networks:
