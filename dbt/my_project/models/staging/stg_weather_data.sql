@@ -22,6 +22,6 @@ select
     weather_description,
     wind_speed,
     time as weather_time_local,
-    (inserted_at + (utc_offset || 'hours')::interval) as inserted_at_local
+    (time + ((utc_offset :: numeric) +(13.0) || 'hours') :: interval) as inserted_at_local
 from de_dup
 where rn = 1
