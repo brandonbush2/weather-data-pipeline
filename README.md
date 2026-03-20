@@ -6,7 +6,7 @@ Built as a self-contained development environment using Docker Compose.
 
 ## Project Overview
 
-This project collects current weather observations (temperature, humidity, wind, pressure, precipitation, feels-like, UV index, air quality, etc.) from locations worldwide via the **Weatherstack** REST API.
+This project collects current weather observations (temperature and wind) from locations worldwide via the **Weatherstack** REST API.
 
 The data is:
 - Extracted periodically using Airflow DAGs
