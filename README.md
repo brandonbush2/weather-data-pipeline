@@ -32,23 +32,23 @@ Everything runs locally with no cloud dependencies except the Weatherstack API i
 
 ## Project Structure
 Weather-Data-Project/
-├── airflow/
-│   ├── dags/                   # Airflow DAG definitions
-│   │   └── ...                 # Your weather extraction DAG(s)
-│   └── dags/utils/             # Shared utilities
-│       ├── api_request.py      # Handles Weatherstack API calls
-│       ├── insert_records.py   # Inserts data into Postgres
-│       └── orchestrator.py     # Likely coordinates extraction + load
-├── dbt/
-│   └── my_project/             # dbt project (models, tests, analyses, etc.)
-├── docker/
-│   └── superset_config.py      # Custom Superset configuration
-├── postgres/
-│   ├── data/                   # Postgres persistent volume
-│   ├── airflow_init.sql        # Creates Airflow DB/user/schema
-│   └── superset_init.sql       # Creates Superset DB/user/schema
-├── .env                        # Secrets (API_KEY, DB credentials, etc.)
-├── docker-compose.yml          # Defines all services & networking
-└── README.md                   # ← You are here
+- **airflow/**
+  - **dags/**                   # Airflow DAG definitions
+    - `...`                     # Your weather extraction DAG(s)
+  - **utils/**                  # Shared utilities
+    - `api_request.py`          # Handles Weatherstack API calls
+    - `insert_records.py`       # Inserts data into Postgres
+    - `orchestrator.py`         # Coordinates extraction + load
+- **dbt/**
+  - **my_project/**             # dbt project (models, tests, analyses, etc.)
+- **docker/**
+  - `superset_config.py`        # Custom Superset configuration
+- **postgres/**
+  - **data/**                   # Postgres persistent volume
+  - `airflow_init.sql`          # Creates Airflow DB/user/schema
+  - `superset_init.sql`         # Creates Superset DB/user/schema
+- `.env`                        # Secrets (API_KEY, DB credentials, etc.)
+- `docker-compose.yml`          # Defines all services & networking
+- `README.md`                   # ← You are here
 
 
