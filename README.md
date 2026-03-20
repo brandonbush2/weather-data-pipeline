@@ -1,4 +1,4 @@
-# Weather Data Project
+# Weather Data ETL + Analytics
 
 A complete local **ETL + Analytics** pipeline that extracts real-time weather data from the [Weatherstack API](https://weatherstack.com/), loads it into PostgreSQL, transforms it with dbt, orchestrates everything via Apache Airflow, and visualizes insights with Apache Superset.
 
