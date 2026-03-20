@@ -17,34 +17,25 @@ The data is:
 Everything runs locally with no cloud dependencies except the Weatherstack API itself.
 
 ### Architecture
-
 ```mermaid
 flowchart LR
-    API[Live Data API]
 
-    subgraph Data Pipeline
-        EX[Extract<br>Python Scripts]s
-        TR[Transform<br>dbt Models]
-        LD[Load<br>PostgreSQL Data Warehouse]
-        RP[Report<br>Apache Superset Dashboards]
-    end
+A[Live Data API] --> B[Extract\nPython]
+B --> C[Transform\ndbt]
+C --> D[Load\nPostgreSQL]
+D --> E[Report\nApache Superset]
 
-    API --> EX
-    EX --> TR
-    TR --> LD
-    LD --> RP
+subgraph Orchestration
+F[Apache Airflow]
+end
 
-    subgraph Orchestration
-        AF[Apache Airflow]
-    end
+F --> B
+F --> C
+F --> D
 
-    AF --> EX
-    AF --> TR
-    AF --> LD
-
-    subgraph Infrastructure
-        DK[Docker Containers]
-    end
+subgraph Containerization
+G[Docker]
+end
 
 ### Tech Stack
 
