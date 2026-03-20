@@ -1,2 +1,4 @@
 .env
 postgres/airflow_init.sql
+docker/.env
+postgres/superset_init.sql
