@@ -17,7 +17,7 @@ The data is:
 Everything runs locally with no cloud dependencies except the Weatherstack API itself.
 
 ### Architecture
-![Architecture](assets/c3a47308-f007-4b85-a546-ce22ae980872.png)
+![Architecture](/repos/Weather-Data_Project/assets/c3a47308-f007-4b85-a546-ce22ae980872.png)
 
 ### Tech Stack
 
